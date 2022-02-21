@@ -18,12 +18,9 @@ export class TodoDetailComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
           this.todoId = params['id'];
           if (this.todoId !== undefined) {
-                console.log(this.todoId);
                 this.getTodoDetailById(this.todoId);
                 this.mode = 'Edit';    
           } else {
-                // this.todoId = null;
-                console.log(this.todoId);
                 this.todoDetail['id'] = 0;
                 this.mode = 'Add';   
           }
