@@ -11,33 +11,39 @@ export class TodoService {
 
         if(localStorage.getItem('localData') !== null){ 
             this.todos = JSON.parse(localStorage.getItem('localData') || '{}');
-            console.log('Second');
         } else {
             var todoArrayData = [
                 {
                     id: 1,
-                    title: 'Prof.',
-                    salution: 'Mr.',
-                    firstName: 'Mark',
-                    middleName: 'Jacob',
-                    lastName: 'Otto',
-                    phone: '1234567890',
-                    email: 'mark_otto@gmail.com'
+                    title: 'Create a Repo',
+                    description: 'Create an repository for an angular application',
+                    dueDate: '22-02-2022',
+                    remarks: 'NA'
                 },
                 {
                     id: 2,
-                    title: 'Dr.',
-                    salution: 'Mr.',
-                    firstName: 'Jacob',
-                    middleName: 'Mark',
-                    lastName: 'Thornton',
-                    phone: '0987654321',
-                    email: 'jacob_thornton@gmail.com'
+                    title: 'To-do list app',
+                    description: 'Create an angular application which is capable to CRUD operation of TO-DO',
+                    dueDate: '22-02-2022',
+                    remarks: 'Add more features to the app'
+                },
+                {
+                    id: 3,
+                    title: 'Test the app',
+                    description: 'Test TO-DO list application',
+                    dueDate: '22-02-2022',
+                    remarks: 'NA'
+                },
+                {
+                    id: 4,
+                    title: 'Deploy',
+                    description: 'Host TO-DO list app in github',
+                    dueDate: '22-02-2022',
+                    remarks: 'NA'
                 }
             ];
             localStorage.setItem('localData', JSON.stringify(todoArrayData));
             this.todos = JSON.parse(localStorage.getItem('localData') || '{}');
-            console.log('First');
         }       
         return this.todos;
     }
